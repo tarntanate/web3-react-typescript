@@ -6,6 +6,7 @@ import { BigNumber } from 'ethers';
 export const MyWallet = () => {
   const { chainId, account, library } = useWeb3React()
   const [balance, setBalance] = React.useState<BigNumber | null>(null)
+  const [blockNumber, setBlockNumber] = React.useState<any>(null)
   
   React.useEffect((): any => {
     if (!!account && !!library) {

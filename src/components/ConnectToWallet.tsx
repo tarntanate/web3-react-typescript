@@ -3,6 +3,7 @@ import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core';
 import { useEagerConnect } from "../hooks/useEagerConnect";
 import { useInactiveListener } from "../hooks/useInactiveListener";
 import { injected } from '../utils/connectors';
+import { Logger } from "@ethersproject/logger";
 
 export const ConnectToWallet = () => {
   // handle logic to recognize the connector currently being activated
@@ -10,8 +11,6 @@ export const ConnectToWallet = () => {
   const [activatingConnector, setActivatingConnector] = useState<any>(null);
   const triedEager = useEagerConnect();
   const isUnsupportedChainIdError = error instanceof UnsupportedChainIdError;
-
-  console.debug('tried', triedEager);
 
   useEffect(() => {
     if (activatingConnector && activatingConnector === connector) {

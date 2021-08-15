@@ -27,11 +27,15 @@ export function useInactiveListener(suppress: boolean = false) {
         console.log("Handling 'networkChanged' event with payload", networkId);
         activate(injected);
       };
+      const handleBlockChanged = (block: string | number) => {
+        console.log("Handling 'block' event with payload", block);
+      };
 
       ethereum.on('connect', handleConnect);
       ethereum.on('chainChanged', handleChainChanged);
       ethereum.on('accountsChanged', handleAccountsChanged);
       ethereum.on('networkChanged', handleNetworkChanged);
+      ethereum.on('block', handleBlockChanged);
 
       return () => {
         if (ethereum.removeListener) {
@@ -39,6 +43,7 @@ export function useInactiveListener(suppress: boolean = false) {
           ethereum.removeListener('chainChanged', handleChainChanged);
           ethereum.removeListener('accountsChanged', handleAccountsChanged);
           ethereum.removeListener('networkChanged', handleNetworkChanged);
+          ethereum.removeListener('block', handleBlockChanged);
         }
       };
     }

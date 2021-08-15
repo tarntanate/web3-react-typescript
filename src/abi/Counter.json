@@ -1,8 +1,6 @@
 [
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "_startCount", "type": "uint256" }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "_startCount", "type": "uint256" }],
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
@@ -20,18 +18,6 @@
     "stateMutability": "view",
     "type": "function"
   },
-  {
-    "inputs": [],
-    "name": "increase",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "reset",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
+  { "inputs": [], "name": "increase", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+  { "inputs": [], "name": "reset", "outputs": [], "stateMutability": "nonpayable", "type": "function" }
 ]
