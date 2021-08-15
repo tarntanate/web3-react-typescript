@@ -6,7 +6,7 @@ import { injected } from '../utils/connectors';
 
 export const ConnectToWallet = () => {
   // handle logic to recognize the connector currently being activated
-  const { connector, activate, error } = useWeb3React();
+  const { connector, activate, error, chainId } = useWeb3React();
   const [activatingConnector, setActivatingConnector] = useState<any>(null);
   const triedEager = useEagerConnect();
   const isUnsupportedChainIdError = error instanceof UnsupportedChainIdError;
@@ -76,7 +76,7 @@ export const ConnectToWallet = () => {
       style={{
         height: '3rem',
         borderRadius: '0.5rem',
-        borderColor: activating ? 'orange' : connected ? 'green' : 'unset',
+        // borderColor: activating ? 'orange' : connected ? 'green' : 'unset',
         position: 'relative',
       }}
       disabled={connected || !!error}
@@ -85,7 +85,7 @@ export const ConnectToWallet = () => {
         activate(injected);
       }}
     >
-      {connected ? 'Connected to wallet' : 'Connect wallet via Injected Connector'}
+      {connected ? `Connected to wallet [chainId: ${chainId}]` : 'Connect wallet via Injected Connector'}
     </button>
   );
 };

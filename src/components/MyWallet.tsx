@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core';
 import { formatEther } from 'ethers/lib/utils';
 import { BigNumber } from 'ethers';
 
-export const Wallet = () => {
+export const MyWallet = () => {
   const { chainId, account, library } = useWeb3React()
   const [balance, setBalance] = React.useState<BigNumber | null>(null)
   

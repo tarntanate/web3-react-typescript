@@ -2,14 +2,14 @@ import React from 'react'
 import './styles/App.css'
 
 import { ConnectToWallet } from './components/ConnectToWallet'
-import { Wallet } from './components/Wallet'
+import { MyWallet } from './components/MyWallet'
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
         <ConnectToWallet />
-        <Wallet />
+        <MyWallet />
       </header>
     </div>
   )
